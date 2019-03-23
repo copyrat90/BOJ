@@ -1,5 +1,9 @@
 
 
+Yena Choi 님의 알고리즘 공부 시작 방법 및 순서
+https://blog.yena.io/studynote/2018/11/14/Algorithm-Basic.html
+
+
 박트리 님의 알고리즘 공부, 어떻게 해야하나요?
 https://baactree.tistory.com/52
 
