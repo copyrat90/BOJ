@@ -2,30 +2,26 @@
 using namespace std;
 
 constexpr int mod_val = 10'007;
-int memo[10][1001];
+int memo[10][1002];
 
-int dfs(int digit, int cnt)
+int inc(int digit, int remain)
 {
-    if (cnt == 1)
-        return 1;
-    if (memo[digit][cnt])
-        return memo[digit][cnt];
-    
-    int sum = 0;
-    for (int i = digit; i < 10; ++i)
-        sum += dfs(i, cnt - 1) % mod_val;
-    memo[digit][cnt] = sum;
-    return sum;
+	if (remain == 0)
+		return 1;
+	int & cur_memo = memo[digit][remain];
+	if (cur_memo != 0)
+		return cur_memo;
+
+	int sum = 0;
+	for (int i = digit; i < 10; ++i)
+		sum += inc(i, remain - 1) % mod_val;
+	sum %= mod_val;
+	return cur_memo = sum;
 }
 
 int main(void)
 {
-    int n;  cin >> n;
-    int sum = 0;
-    for (int i = 0; i < 10; ++i)
-        sum += dfs(i, n) % mod_val;
-    
-    sum %= mod_val;
-    cout << sum;
-    return 0;
+	int n;	cin >> n;
+	cout << inc(0, n);
+	return 0;
 }
