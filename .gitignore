@@ -1,4 +1,6 @@
 *.exe
+/src
+/bin
 /.vscode
 test.txt
 *.jnlp
