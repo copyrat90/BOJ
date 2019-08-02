@@ -6,3 +6,4 @@ test.txt
 *.jnlp
 tempCodeRunnerFile.*
 Main.*
+goorm.manifest
